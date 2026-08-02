@@ -19,11 +19,94 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 2rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            animation: navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes navSlideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .nav-brand:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Wrapper to Center the Todo Container */
+        .main-wrapper {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .todo-container {
@@ -195,26 +278,39 @@
 </head>
 <body>
 
-    <div class="todo-container">
-        <h1>My Todo List</h1>
-        <ul>
-            <li>
-                <input type="checkbox" id="todo-1">
-                <label for="todo-1">Learn CSS Grid and Flexbox</label>
-            </li>
-            <li>
-                <input type="checkbox" id="todo-2" checked>
-                <label for="todo-2">Setup GitHub Repository</label>
-            </li>
-            <li>
-                <input type="checkbox" id="todo-3">
-                <label for="todo-3">Build a JavaScript Todo App</label>
-            </li>
-            <li>
-                <input type="checkbox" id="todo-4">
-                <label for="todo-4">Deploy project to GitHub Pages</label>
-            </li>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="nav-brand">TaskFlow</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tasks</a></li>
+            <li><a href="#">Settings</a></li>
         </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <div class="todo-container">
+            <h1>My Todo List</h1>
+            <ul>
+                <li>
+                    <input type="checkbox" id="todo-1">
+                    <label for="todo-1">Learn CSS Grid and Flexbox</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="todo-2" checked>
+                    <label for="todo-2">Setup GitHub Repository</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="todo-3">
+                    <label for="todo-3">Build a JavaScript Todo App</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="todo-4">
+                    <label for="todo-4">Deploy project to GitHub Pages</label>
+                </li>
+            </ul>
+        </div>
     </div>
 
 </body>
