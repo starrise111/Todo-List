@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Todo List</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .todo-container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background-color 0.2s;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.75rem;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+            font-size: 1rem;
+            flex: 1;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+
+        input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-container">
+        <h1>My Todo List</h1>
+        <ul>
+            <li>
+                <input type="checkbox" id="todo-1">
+                <label for="todo-1">Learn CSS Grid and Flexbox</label>
+            </li>
+            <li>
+                <input type="checkbox" id="todo-2" checked>
+                <label for="todo-2">Setup GitHub Repository</label>
+            </li>
+            <li>
+                <input type="checkbox" id="todo-3">
+                <label for="todo-3">Build a JavaScript Todo App</label>
+            </li>
+            <li>
+                <input type="checkbox" id="todo-4">
+                <label for="todo-4">Deploy project to GitHub Pages</label>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
