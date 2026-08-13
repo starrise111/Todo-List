@@ -1,4 +1,4 @@
-# 🚀 TaskFlow - Todo List
+# 🚀 Todo List
 
 A modern, clean, and fully animated **Todo List** web application built using HTML5 and CSS3. Features a fixed vibrant navigation bar, custom checkmark animations, smooth line-through effects, and a stylish red theme.
 
